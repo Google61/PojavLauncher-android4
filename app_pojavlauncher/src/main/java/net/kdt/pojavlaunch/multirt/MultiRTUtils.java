@@ -6,6 +6,7 @@ import android.system.Os;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.Tools;
 import net.kdt.pojavlaunch.utils.JREUtils;
+import net.kdt.pojavlauch.ReflectLibcore
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
@@ -240,7 +241,11 @@ public class MultiRTUtils {
                 try {
                     // android.system.Os
                     // Libcore one support all Android versions
-                    Os.symlink(tarEntry.getName(), tarEntry.getLinkName());
+                    if(Build.VERSION.SDK_INT > 20) {
+                        Os.symlink(tarEntry.getName(), tarEntry.getLinkName());
+                    }else{
+                        ReflectLibcore.symlink(tarEntry.getName(), tarEntry.getLinkName());
+                    }
                 } catch (Throwable e) {
                     e.printStackTrace();
                 }
