@@ -97,6 +97,7 @@ public class PojavLoginActivity extends BaseActivity
             } catch (Exception e) {
                 Log.e("LibcoreReflector","Failed to initialize!",e);
             }
+        }
         if(savedInstanceState != null) {
             isStarting = savedInstanceState.getBoolean("isStarting");
             isSkipInit = savedInstanceState.getBoolean("isSkipInit");
