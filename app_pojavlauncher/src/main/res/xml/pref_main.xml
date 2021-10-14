@@ -6,10 +6,15 @@
     <androidx.preference.PreferenceCategory
 		android:title="@string/mcl_setting_category_general">
 
-        <net.kdt.pojavlaunch.prefs.UninstallJREDialogPreference
-            android:summary="@string/mcl_setting_subtitle_uninstalljre"
-            android:title="@string/mcl_setting_title_uninstalljre"
-            app2:icon="@drawable/rm_jre" />
+        <net.kdt.pojavlaunch.prefs.RuntimeManagerPreference
+            android:summary="@string/multirt_subtitle"
+            android:title="@string/multirt_title"/>
+        <androidx.preference.ListPreference
+            android:title="@string/mcl_setting_category_renderer"
+            android:key="renderer"
+            android:defaultValue="opengles2"
+            android:entries="@array/renderer"
+            android:entryValues="@array/renderer_values"/>
 
         <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
             android:key="timeLongPressTrigger"
@@ -18,24 +23,14 @@
             app2:showSeekBarValue="true"
             app2:selectable="false"
             app2:icon="@drawable/tap_len" />
+
+
         <androidx.preference.SwitchPreferenceCompat
             android:defaultValue="false"
+            android:icon="@drawable/ic_disable_gestures"
             android:key="disableGestures"
             android:summary="@string/mcl_disable_gestures_subtitle"
             android:title="@string/mcl_disable_gestures" />
-        <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
-            android:key="resolutionRatio"
-            android:summary="@string/mcl_setting_subtitle_resolution_scaler"
-            android:title="@string/mcl_setting_title_resolution_scaler"
-            app2:showSeekBarValue="true"
-            app2:selectable="false"
-            app2:icon="@drawable/resolution_scaler"/>
-        <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="freeform"
-            android:summary="@string/mcl_setting_subtitle_freeform"
-            android:title="@string/mcl_setting_title_freeform"
-            app2:icon="@drawable/freeform_opt" />
 
         <androidx.preference.SwitchPreferenceCompat
             android:defaultValue="false"
@@ -43,22 +38,19 @@
             android:summary="@string/mcl_setting_subtitle_hide_sidebar"
             android:title="@string/mcl_setting_title_hide_sidebar"
             app2:icon="@drawable/hide_sidebar" />
+        <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
+            android:key="allocation"
+            android:icon="@drawable/ic_auto_ram"
+            android:summary="@string/mcl_memory_allocation_subtitle"
+            android:title="@string/mcl_memory_allocation"
+            app2:showSeekBarValue="true"
+            app2:selectable="false"/>
         <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="ignoreNotch"
             android:summary="@string/mcl_setting_subtitle_ignore_notch"
             android:title="@string/mcl_setting_title_ignore_notch"
             app2:icon="@drawable/ignore_notch" />
-        <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="autoRam"
-            android:summary="@string/auto_ram_subtitle"
-            android:title="@string/auto_ram_title" />
-        <androidx.preference.SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="backToRightMouse"
-            android:summary="@string/mcl_setting_subtitle_backtorightmouse"
-            android:title="@string/mcl_setting_title_backtorightmouse" />
 
         <androidx.preference.EditTextPreference
             android:dialogTitle="@string/mcl_setting_title_javaargs"
@@ -69,6 +61,7 @@
             android:title="@string/mcl_setting_title_javaargs" />
         <androidx.preference.SwitchPreferenceCompat
             android:defaultValue="true"
+            android:icon="@drawable/ic_lib_check"
             android:key="checkLibraries"
             android:summary="@string/mcl_setting_check_libraries_subtitle"
             android:title="@string/mcl_setting_check_libraries" />
@@ -76,7 +69,13 @@
 	
     <androidx.preference.PreferenceCategory
         android:title="@string/mcl_setting_category_scaling">
-        
+        <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
+            android:key="resolutionRatio"
+            android:summary="@string/mcl_setting_subtitle_resolution_scaler"
+            android:title="@string/mcl_setting_title_resolution_scaler"
+            app2:showSeekBarValue="true"
+            app2:selectable="false"
+            app2:icon="@drawable/resolution_scaler"/>
         <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
             android:key="buttonscale"
             android:title="@string/mcl_setting_title_buttonscale"
@@ -90,6 +89,13 @@
             android:summary="@string/mcl_setting_subtitle_mousescale"
             android:title="@string/mcl_setting_title_mousescale"
             app2:icon="@drawable/mouse_pointer_1"
+            app2:selectable="false"
+            app2:showSeekBarValue="true" />
+        <net.kdt.pojavlaunch.prefs.CustomSeekBarPreference
+            android:key="mousespeed"
+            android:summary="@string/mcl_setting_subtitle_mousespeed"
+            android:title="@string/mcl_setting_title_mousespeed"
+            app2:icon="@drawable/mouse_pointer_spd"
             app2:selectable="false"
             app2:showSeekBarValue="true" />
         

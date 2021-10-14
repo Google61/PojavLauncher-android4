@@ -1,2 +1,8 @@
+/.gradle
 /build
 /*/build
+app_pojavlauncher/src/main/assets/components/jre
+local.properties
+.idea/
+app_pojavlauncher/.cxx/
+.vs/
