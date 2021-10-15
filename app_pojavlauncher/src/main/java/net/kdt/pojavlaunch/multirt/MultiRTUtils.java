@@ -6,7 +6,7 @@ import android.system.Os;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.Tools;
 import net.kdt.pojavlaunch.utils.JREUtils;
-import net.kdt.pojavlauch.ReflectLibcore;
+import net.kdt.pojavlaunch.ReflectLibcore;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
