@@ -60,10 +60,10 @@ jobs:
       if: steps.gl4es-cache.outputs.cache-hit != 'true'
       run: |
         cp -R gl4es/libs/* app_pojavlauncher/src/main/jniLibs/
-        mv gl4es ..
-        git add .
-        git commit -am "CI: Update gl4es"
-        git push
+#        mv gl4es ..
+#        git add .
+#        git commit -am "CI: Update gl4es"
+#        git push
     
     - name: Get JRE8
       uses: dawidd6/action-download-artifact@v2
@@ -108,6 +108,7 @@ jobs:
           name: app-debug
           path: out/app-debug.apk
     - name: Upload onto the Google Play testing track
+      if: github.repository_owner == 'PojavLauncherTeam'
       uses: r0adkll/upload-google-play@v1.0.15
       with:
         serviceAccountJsonPlainText: ${{ secrets.GPLAY_SERVICE_JSON }}
