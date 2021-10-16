@@ -2,7 +2,7 @@ package net.kdt.pojavlaunch.multirt;
 
 import android.content.Context;
 import android.system.Os;
-import android.os.Build.VERSION;
+import android.os.Build;
 
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.Tools;
