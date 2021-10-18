@@ -57,7 +57,8 @@ public class JREUtils {
                 return libName;
             }
         }
-        for (String libPath : Os.getenv("LD_LIBRARY_PATH").split(":")) {
+        String ldlibPath = Build.VERSION.SDK_INT > 20 ? Os.getenv("LD_LIBRARY_PATH") : ReflectLibcore.getenv("LD_LIBRARY_PATH");
+        for (String libPath : ldlibPath.split(":")) {
             File f = new File(libPath, libName);
             if (f.exists() && f.isFile()) {
                 return f.getAbsolutePath();
@@ -218,7 +219,8 @@ public class JREUtils {
         envMap.put("MESA_LOADER_DRIVER_OVERRIDE", "zink");
 
         envMap.put("LD_LIBRARY_PATH", LD_LIBRARY_PATH);
-        envMap.put("PATH", Tools.DIR_HOME_JRE + "/bin:" + Os.getenv("PATH"));
+        if(Build.VERSION.SDK_INT > 20) envMap.put("PATH", Tools.DIR_HOME_JRE + "/bin:" + Os.getenv("PATH"));
+        else envMap.put("PATH", Tools.DIR_HOME_JRE + "/bin:" + ReflectLibcore.getenv("PATH"));
         
         envMap.put("REGAL_GL_VENDOR", "Android");
         envMap.put("REGAL_GL_RENDERER", "Regal");
@@ -257,7 +259,8 @@ public class JREUtils {
         }
         for (Map.Entry<String, String> env : envMap.entrySet()) {
             ctx.appendlnToLog("Added custom env: " + env.getKey() + "=" + env.getValue());
-            Os.setenv(env.getKey(), env.getValue(), true);
+            if(Build.VERSION.SDK_INT > 20) Os.setenv(env.getKey(), env.getValue(), true);
+            else ReflectLibcore.setenv(env.getKey(), env.getValue(), true);
         }
 
         File serverFile = new File(Tools.DIR_HOME_JRE + "/" + Tools.DIRNAME_HOME_JRE + "/server/libjvm.so");

@@ -41,6 +41,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -88,7 +89,15 @@ public class PojavLoginActivity extends BaseActivity
     
     @Override
     protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState); // false;
+        super.onCreate(savedInstanceState); // false);
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        if(Build.VERSION.SDK_INT < 20) {
+            try {
+                ReflectLibcore.prepare();
+            } catch (Exception e) {
+                Log.e("LibcoreReflector","Failed to initialize!",e);
+            }
+        }
         if(savedInstanceState != null) {
             isStarting = savedInstanceState.getBoolean("isStarting");
             isSkipInit = savedInstanceState.getBoolean("isSkipInit");
@@ -408,7 +417,7 @@ public class PojavLoginActivity extends BaseActivity
         try {
             rt_version = Tools.read(am.open("components/jre/version"));
         } catch (IOException e) {
-            Log.e("JREAuto", "JRE was not included on this APK.", e);
+            Log.e("JREAuto", "JRE was not included on this APK", e);
         }
         if(current_rt_version == null && otherRuntimesAvailable) return true; //Assume user maintains his own runtime
         if(rt_version == null) return false;

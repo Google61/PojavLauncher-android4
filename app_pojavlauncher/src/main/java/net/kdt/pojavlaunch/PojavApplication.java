@@ -74,6 +74,7 @@ public class PojavApplication extends Application
 		} catch (Throwable th) {
 			Intent ferrorIntent = new Intent(this, FatalErrorActivity.class);
 			ferrorIntent.putExtra("throwable", th);
+			ferrorIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(ferrorIntent);
 		}
 	}
