@@ -56,7 +56,7 @@ public class Architecture {
 		//int comparedArch = is64BitsDevice() ? ARCH_X86_64 : ARCH_X86;
 		//for (String str : ABI) {
 		//	if (archAsInt(str) == comparedArch) return true;
-		}
+		//}
 		return false;
 	}
 
