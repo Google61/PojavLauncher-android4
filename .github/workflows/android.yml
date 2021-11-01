@@ -40,7 +40,7 @@ jobs:
       if: steps.gl4es-cache.outputs.cache-hit != 'true'
       uses: actions/checkout@v2
       with:
-        repository: 'ptitSeb/gl4es'
+        repository: 'PojavLauncherTeam/gl4es'
         path: 'gl4es'
 
     - name: Build gl4es
@@ -50,10 +50,6 @@ jobs:
         cd gl4es
         git config --global user.email "github-actions@users.noreply.github.com"
         git config --global user.name "github-actions"
-        git remote add upstream https://github.com/PojavLauncherTeam/gl4es
-        git fetch upstream
-        git checkout master
-        git merge --allow-unrelated-histories upstream/master || echo "Merge exit code $?"
         $ANDROID_NDK_HOME/ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk
     
     - name: Install gl4es
