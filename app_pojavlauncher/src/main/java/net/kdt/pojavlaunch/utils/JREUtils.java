@@ -45,10 +45,10 @@ public class JREUtils {
     }
     
     public static String findInLdLibPath(String libName) {
-        if(Os.getenv("LD_LIBRARY_PATH")==null) {
+        if(Build.VERSION.SDK_INT > 20 ? Os.getenv("LD_LIBRARY_PATH")=null : ReflectLibcore.getenv("LD_LIBRARY_PATH")==null) {
             try {
                 if (LD_LIBRARY_PATH != null) {
-                    Os.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
+                    Build.VERSION.SDK_INT > 20 ? Os.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true) : ReflectLibcore.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
                 }else{
                     return libName;
                 }
