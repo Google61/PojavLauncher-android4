@@ -45,14 +45,11 @@ public class JREUtils {
     }
     
     public static String findInLdLibPath(String libName) {
-        if(Build.VERSION.SDK_INT > 20 ? Os.getenv("LD_LIBRARY_PATH")=null : ReflectLibcore.getenv("LD_LIBRARY_PATH")==null) {
+        if(Build.VERSION.SDK_INT > 20) {
+        if(Os.getenv("LD_LIBRARY_PATH")==null) {
             try {
                 if (LD_LIBRARY_PATH != null) {
-                    if (Build.VERSION.SDK_INT > 20) {
-                        Os.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
-                    }else{
-                        ReflectLibcore.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
-                    }
+                    Os.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
                 }else{
                     return libName;
                 }
@@ -61,7 +58,22 @@ public class JREUtils {
                 return libName;
             }
         }
-        String ldlibPath = Build.VERSION.SDK_INT > 20 ? Os.getenv("LD_LIBRARY_PATH") : ReflectLibcore.getenv("LD_LIBRARY_PATH");
+        String ldlibPath = Os.getenv("LD_LIBRARY_PATH");
+        }else{
+        if(ReflectLibcore.getenv("LD_LIBRARY_PATH")==null) {
+            try {
+                if (LD_LIBRARY_PATH != null) {
+                    ReflectLibcore.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
+                }else{
+                    return libName;
+                }
+            }catch (ErrnoException e) {
+                e.printStackTrace();
+                return libName;
+            }
+        }
+        String ldlibPath = ReflectLibcore.getenv("LD_LIBRARY_PATH");
+        }
         for (String libPath : ldlibPath.split(":")) {
             File f = new File(libPath, libName);
             if (f.exists() && f.isFile()) {
