@@ -45,6 +45,7 @@ public class JREUtils {
     }
     
     public static String findInLdLibPath(String libName) {
+        String ldlibPath
         if(Build.VERSION.SDK_INT > 20) {
         if(Os.getenv("LD_LIBRARY_PATH")==null) {
             try {
