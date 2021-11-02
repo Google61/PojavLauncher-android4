@@ -62,16 +62,16 @@ public class JREUtils {
         ldlibPath = Os.getenv("LD_LIBRARY_PATH");
         }else{
         if(ReflectLibcore.getenv("LD_LIBRARY_PATH")==null) {
-            try {
+        //    try {
                 if (LD_LIBRARY_PATH != null) {
                     ReflectLibcore.setenv("LD_LIBRARY_PATH", LD_LIBRARY_PATH, true);
                 }else{
                     return libName;
                 }
-            }catch (ErrnoException e) {
-                e.printStackTrace();
-                return libName;
-            }
+        //    }catch (ErrnoException e) {
+        //        e.printStackTrace();
+        //        return libName;
+        //    }
         }
         ldlibPath = ReflectLibcore.getenv("LD_LIBRARY_PATH");
         }
