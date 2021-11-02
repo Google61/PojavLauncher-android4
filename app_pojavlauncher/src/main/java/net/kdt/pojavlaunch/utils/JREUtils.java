@@ -59,7 +59,7 @@ public class JREUtils {
                 return libName;
             }
         }
-        String ldlibPath = Os.getenv("LD_LIBRARY_PATH");
+        ldlibPath = Os.getenv("LD_LIBRARY_PATH");
         }else{
         if(ReflectLibcore.getenv("LD_LIBRARY_PATH")==null) {
             try {
@@ -73,7 +73,7 @@ public class JREUtils {
                 return libName;
             }
         }
-        String ldlibPath = ReflectLibcore.getenv("LD_LIBRARY_PATH");
+        ldlibPath = ReflectLibcore.getenv("LD_LIBRARY_PATH");
         }
         for (String libPath : ldlibPath.split(":")) {
             File f = new File(libPath, libName);
@@ -96,6 +96,9 @@ public class JREUtils {
         return ret;
     }
     public static void initJavaRuntime() {
+        if(Build.VERSION.SDK_INT < 20) {    // android 4 gamer hack
+        dlopen(findInLdLibPath("libc.so")); // lollipop libc must be packaged with jre
+        }
         dlopen(findInLdLibPath("libjli.so"));
         if(!dlopen("libjvm.so")){
             Log.w("DynamicLoader","Failed to load with no path, trying with full path");
