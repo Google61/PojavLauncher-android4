@@ -96,9 +96,6 @@ public class JREUtils {
         return ret;
     }
     public static void initJavaRuntime() {
-        if(Build.VERSION.SDK_INT < 20) {    // android 4 gamer hack
-        dlopen(findInLdLibPath("libc.so")); // lollipop libc must be packaged with jre
-        }
         dlopen(findInLdLibPath("libjli.so"));
         if(!dlopen("libjvm.so")){
             Log.w("DynamicLoader","Failed to load with no path, trying with full path");
