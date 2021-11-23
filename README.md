@@ -1,8 +1,11 @@
-This fork is kinda a backport to Android 4.4 and lower
-Anyway, latest actions build seems to work
+This fork is kinda a backport to Android 4.1-4.4  
+Uses [openjdk fork]  
+Anyway, latest actions build seems to work  
 todo:
 - Microsoft login
 - arm64 support
+- x86 detection
+- gl4es 1.1.4 (1.1.5 works)
 - ???
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
