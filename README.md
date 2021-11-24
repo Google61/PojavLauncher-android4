@@ -2,12 +2,12 @@
 
 This fork is kinda a backport to Android 4.1-4.4  
 Uses [openjdk fork](https://github.com/Google61/android-openjdk-build-multiarch)  
-Anyway, latest actions build seems to work  
+Anyway, latest actions build looks like working (though I couldn't test it cuz my device have 100mb free ram lol)  
 todo:
 - Microsoft login
 - arm64 support
-- x86 detection
-- gl4es 1.1.4 (1.1.5 works)
+- ~~x86 detection~~
+- remove unsupported renderers (only gl4es 1.1.5 works)
 - ???
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
