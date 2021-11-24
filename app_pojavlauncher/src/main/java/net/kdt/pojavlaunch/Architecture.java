@@ -52,11 +52,13 @@ public class Architecture {
 	public static boolean isx86Device(){
 		//We check the whole range of supported ABIs,
 		//Since asus zenfones can place arm before their native instruction set.
-		//String[] ABI = is64BitsDevice() ? Build.SUPPORTED_64_BIT_ABIS : Build.SUPPORTED_32_BIT_ABIS;
-		//int comparedArch = is64BitsDevice() ? ARCH_X86_64 : ARCH_X86;
-		//for (String str : ABI) {
-		//	if (archAsInt(str) == comparedArch) return true;
-		//}
+		if (Build.VERSION.SDK_INT > 20){
+		String[] ABI = is64BitsDevice() ? Build.SUPPORTED_64_BIT_ABIS : Build.SUPPORTED_32_BIT_ABIS;
+		int comparedArch = is64BitsDevice() ? ARCH_X86_64 : ARCH_X86;
+		for (String str : ABI) {
+			if (archAsInt(str) == comparedArch) return true;
+		}
+		}
 		if(Build.CPU_ABI.contains("x86_64") || Build.CPU_ABI.contains("amd64")) return true;
 		if(Build.CPU_ABI.contains("x86") || (Build.CPU_ABI.startsWith("i") && Build.CPU_ABI.endsWith("86"))) return true;
 		
