@@ -57,6 +57,9 @@ public class Architecture {
 		//for (String str : ABI) {
 		//	if (archAsInt(str) == comparedArch) return true;
 		//}
+		if(Build.CPU_ABI.contains("x86_64") || Build.CPU_ABI.contains("amd64")) return true;
+		if(Build.CPU_ABI.contains("x86") || (Build.CPU_ABI.startsWith("i") && Build.CPU_ABI.endsWith("86"))) return true;
+		
 		return false;
 	}
 
