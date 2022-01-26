@@ -1,14 +1,13 @@
 # PojavLauncher-android4
 
-This fork is kinda a backport to Android 4.1-4.4  
-Uses [openjdk fork](https://github.com/Google61/android-openjdk-build-multiarch)  
-Anyway, latest actions build looks like working (though I couldn't test it cuz my device have 100mb free ram lol)  
+Backport to Android 4.4 (maybe lower, needs testing)  
+
+no playable build yet due to OpenJDK backport is still WIP  
+
 todo:
 - Microsoft login
-- arm64 support
 - ~~x86 detection~~
 - remove unsupported renderers (only gl4es 1.1.5 works)
-- ???
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
 [![Crowdin](https://badges.crowdin.net/pojavlauncher/localized.svg)](https://crowdin.com/project/pojavlauncher)
