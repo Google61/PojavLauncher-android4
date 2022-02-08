@@ -80,6 +80,7 @@ jobs:
         cd app_pojavlauncher/src/main/assets/components/jre
         mv jre17-* bin-arm.tar.xz
         tar -cJf universal.tar.xz --files-from /dev/null
+        cd $GITHUB_WORKSPACE
         
         mkdir -p out
         chmod +x gradlew
