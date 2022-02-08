@@ -62,12 +62,11 @@ jobs:
 #        git push
     
     - name: Get JRE17
-      uses: dawidd6/action-download-artifact@v2
+      uses: dawidd6/action-download-artifact@v2.17.0
       with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build.yml
           path: app_pojavlauncher/src/main/assets/components/jre
-          workflow_conclusion: failure
           repo: Google61/android-openjdk-build-multiarch
           branch: lapi19
           name: jre17-aarch32
