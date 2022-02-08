@@ -68,7 +68,7 @@ jobs:
           workflow: build.yml
           path: app_pojavlauncher/src/main/assets/components/jre
           repo: Google61/android-openjdk-build-multiarch
-          conclusion: failure
+          workflow_conclusion: failure
           branch: lapi19
           name: jre17-aarch32
     
