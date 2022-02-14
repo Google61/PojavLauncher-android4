@@ -96,6 +96,7 @@ public class JREUtils {
         return ret;
     }
     public static void initJavaRuntime() {
+        dlopen(findInLdLibPath("libapi19.so"));
         dlopen(findInLdLibPath("libjli.so"));
         if(!dlopen("libjvm.so")){
             Log.w("DynamicLoader","Failed to load with no path, trying with full path");
