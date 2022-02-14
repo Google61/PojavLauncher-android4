@@ -61,16 +61,16 @@ jobs:
 #        git commit -am "CI: Update gl4es"
 #        git push
     
-    - name: Get JRE17
+    - name: Get JRE8
       uses: dawidd6/action-download-artifact@v2.17.0
       with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build.yml
           path: app_pojavlauncher/src/main/assets/components/jre
-          repo: Google61/android-openjdk-build-multiarch
-          workflow_conclusion: failure
-          branch: lapi19
-          name: jre17-aarch32
+          repo: Google61/openjdk-aarch32-jdk8u
+          workflow_conclusion: success
+          branch: jre8-libapi19-dynamic
+          name: jre8-aarch32
     
     - name: Build APK with Gradle
       run: |
