@@ -67,7 +67,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build.yml
           path: app_pojavlauncher/src/main/assets/components/jre
-          repo: Google61/openjdk-aarch32-jdk8u
+          repo: Google61/openjdk-build-android4
           workflow_conclusion: success
           branch: jre8-libapi19-dynamic
           name: jre8-aarch32
