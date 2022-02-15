@@ -214,7 +214,7 @@ public class ControlButton extends androidx.appcompat.widget.AppCompatButton imp
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (isToggled || (!mProperties.isToggle && isActivated()))
-            canvas.drawRect(0, getHeight() - 10 * mScaleAt, getWidth(), getHeight(), mRectPaint);
+            canvas.drawRect(0, getHeight() - 10 * LauncherPreferences.PREF_BUTTONSIZE, getWidth(), getHeight(), mRectPaint);
     }
 
     @Override
