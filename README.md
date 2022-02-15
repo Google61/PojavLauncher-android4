@@ -1,8 +1,10 @@
 # PojavLauncher-android4
 
 Backport to Android 4.4 (maybe lower, needs testing)  
+(based on android4 branch)  
 
-no playable build yet due to OpenJDK backport is still WIP  
+~~no playable build yet due to OpenJDK backport is still WIP~~  
+openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
 
 todo:
 - Microsoft login
