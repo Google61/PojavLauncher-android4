@@ -68,6 +68,9 @@ android {
         versionCode getDateSeconds()
         versionName getVersionName()
         multiDexEnabled false //important
+	ndk {
+  		abiFilters "armeabi-v7a"
+	}
     }
 
     buildTypes {
