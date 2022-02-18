@@ -6,10 +6,9 @@ Backport to Android 4.4, based on android4 branch
 openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
 
 todo:
-- sound (rebuild lwjgl libopenal)
+- ~~sound (rebuild libopenal)~~
 - awt
 - microsoft login
-- ~~x86 detection~~
 - remove unsupported renderers (only gl4es 1.1.5 works)
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
