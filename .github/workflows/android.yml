@@ -69,7 +69,7 @@ jobs:
           path: app_pojavlauncher/src/main/assets/components/jre
           repo: Google61/openjdk-build-android4
           workflow_conclusion: success
-          branch: jre8-libapi19-dynamic
+          branch: jre8-api19
           name: jre8-aarch32
     
     - name: Build APK with Gradle
@@ -109,15 +109,6 @@ jobs:
       with:
           name: app-debug
           path: out/app-debug.apk
-    - name: Upload onto the Google Play testing track
-      if: github.repository_owner == 'PojavLauncherTeam'
-      uses: r0adkll/upload-google-play@v1.0.15
-      with:
-        serviceAccountJsonPlainText: ${{ secrets.GPLAY_SERVICE_JSON }}
-        packageName: net.kdt.pojavlaunch
-        releaseFiles: out/app-gplay.aab
-        track: internal
-        inAppUpdatePriority: 5
     - name: Upload APK (without runtime)
       uses: actions/upload-artifact@v2
       with:
