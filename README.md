@@ -1,14 +1,14 @@
 # PojavLauncher-android4
 
-Backport to Android 4.4, based on android4 branch  
-
-~~no playable build yet due to OpenJDK backport is still WIP~~  
+Backport to Android 4.4 (4.1?), based on android4 branch  
+ 
 openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
 
 todo:
 - ~~sound (rebuild libopenal)~~
-- awt
+- awt (only mc >1.6.2 works)
 - microsoft login
+- rebuild gl4es 1.1.4
 - remove unsupported renderers (only gl4es 1.1.5 works)
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
