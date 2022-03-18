@@ -5,7 +5,6 @@ Backport to Android 4.4 (4.1?), based on android4 branch
 openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
 
 todo:
-- ~~sound (rebuild libopenal)~~
 - awt (only mc >1.6.2 works)
 - microsoft login
 - rebuild gl4es 1.1.4
