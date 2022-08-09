@@ -52,6 +52,12 @@ jobs:
         chmod +x scripts/languagelist_updater.sh
         bash scripts/languagelist_updater.sh
       
+        cd app_pojavlauncher/src/main/assets/components/jre
+        mv jre8*.tar.xz bin-arm.tar.xz
+        tar -cf universal.tar.xz -T /dev/null
+        date +%Y%m%d>"$out"/version
+        cd $GITHUB_WORKSPACE
+        
         mkdir -p out
         chmod +x gradlew
         ./gradlew clean
@@ -98,9 +104,3 @@ jobs:
           name: app-debug-noruntime
           path: out/app-debug-noruntime.apk
 
-    - name: Upload release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        file: out/app-debug*
-        overwrite: true
-        file_glob: true
