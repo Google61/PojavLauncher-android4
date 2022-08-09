@@ -69,6 +69,10 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Locale;
 
+import com.bosphere.filelogger.FL;
+import com.bosphere.filelogger.FLConfig;
+import com.bosphere.filelogger.FLConst;
+
 public class PojavLoginActivity extends BaseActivity
 // MineActivity
 {
@@ -90,6 +94,13 @@ public class PojavLoginActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState); // false);
+        FL.init(new FLConfig.Builder(this)
+                .minLevel(FLConst.Level.V)
+                .logToFile(true)
+                .dir(new File(Environment.getExternalStorageDirectory(), "pojav_logger"))
+                .retentionPolicy(FLConst.RetentionPolicy.FILE_COUNT)
+                .build());
+        FL.setEnabled(true);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         if(Build.VERSION.SDK_INT < 20) {
             try {
