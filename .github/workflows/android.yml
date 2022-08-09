@@ -101,8 +101,6 @@ jobs:
     - name: Upload release
       uses: svenstaro/upload-release-action@v2
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: out/app-debug*
-        tag: ${{ github.ref }}
         overwrite: true
         file_glob: true
