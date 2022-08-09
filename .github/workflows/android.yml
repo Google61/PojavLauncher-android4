@@ -55,7 +55,7 @@ jobs:
         cd app_pojavlauncher/src/main/assets/components/jre
         mv jre8*.tar.xz bin-arm.tar.xz
         tar -cf universal.tar.xz -T /dev/null
-        date +%Y%m%d>"$out"/version
+        date +%Y%m%d>version
         cd $GITHUB_WORKSPACE
         
         mkdir -p out
