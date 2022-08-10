@@ -79,7 +79,7 @@ import com.elvishew.xlog.printer.AndroidPrinter;
 import com.elvishew.xlog.printer.Printer;
 import com.elvishew.xlog.printer.file.FilePrinter;
 import com.elvishew.xlog.printer.file.naming.DateFileNameGenerator;
-import com.elvishew.xlog.printer.file.writer.SimpleWriter;
+//import com.elvishew.xlog.printer.file.writer.SimpleWriter;
 
 public class PojavLoginActivity extends BaseActivity
 // MineActivity
