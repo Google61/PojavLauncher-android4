@@ -74,7 +74,7 @@ jobs:
       run: |
         cd app_pojavlauncher
         # do not try at home
-        find ./ -type f -name '*.java' -readable -writable -exec sed -i "s/Log./FL./g" {} +
+        find ./ -type f -name '*.java' -readable -writable -exec sed -i "s/\bLog./FL./g" {} +
         grep -RilZ --include='*.java' "FL." . | xargs -0 sed -i "2i import com.bosphere.filelogger.FL;"
         cd ..
         # Build the launcher
