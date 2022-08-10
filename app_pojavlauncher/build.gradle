@@ -144,3 +144,38 @@ dependencies {
     // implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.7.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
+apply plugin: 'android-aspectjx'
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.10'
+    }
+}
+
+aspectjx {
+    // if you use kotlin in your project make sure to exclude `kotlin`,
+    // otherwise a build error `zip file is empty` will be thrown
+    // exclude 'kotlin'
+
+    // add 'exclude' packages/classes that you don't want to intercept the logs from
+    // exclude 'androidx.appcompat'
+    // exclude 'android.support'
+
+    // or add 'include' packages/classes that you want to intercept the logs from
+    include 'android.webkit'
+}
+
+dependencies {
+    implementation 'com.elvishew:xlog-libcat:1.0.0'
+}
