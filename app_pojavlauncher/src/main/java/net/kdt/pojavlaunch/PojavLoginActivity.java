@@ -103,9 +103,10 @@ public class PojavLoginActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState); // false);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        boolean storagePermAllowed = Build.VERSION.SDK_INT < 23 || ActivityCompat.checkSelfPermission(PojavLoginActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        //boolean storagePermAllowed = Build.VERSION.SDK_INT < 23 || ActivityCompat.checkSelfPermission(PojavLoginActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
         Printer filePrinter = new FilePrinter
-            .Builder(storagePermAllowed ? Tools.DIR_GAME_HOME : Tools.DIR_DATA)
+            //.Builder(storagePermAllowed ? Tools.DIR_GAME_HOME : Tools.DIR_DATA)
+            .Builder(Tools.DIR_GAME_HOME)
             .build();
         XLog.init(filePrinter);
         LibCat.config(true, filePrinter);
