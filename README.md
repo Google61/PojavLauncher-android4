@@ -5,8 +5,9 @@ Backport to Android 4.4 (4.1?), based on android4 branch
 openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
 
 todo:
-- awt (only mc >1.6.2 works)
-- microsoft login
+- debug version list?
+- debug ms login webview; resolve ssl error?
+- caciocavallo
 
 [![Android CI](https://github.com/PojavLauncherTeam/PojavLauncher/workflows/Android%20CI/badge.svg)](https://github.com/PojavLauncherTeam/PojavLauncher/actions)
 [![Crowdin](https://badges.crowdin.net/pojavlauncher/localized.svg)](https://crowdin.com/project/pojavlauncher)
