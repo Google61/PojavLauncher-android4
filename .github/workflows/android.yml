@@ -32,7 +32,7 @@ jobs:
           workflow: android.yml
           path: app_pojavlauncher/src/main/jniLibs
           workflow_conclusion: success
-          repo: PojavLauncherTeam/gl4es-114-extra
+          repo: Google61/gl4es-114-extra
           branch: master
           name: gl4es-114
     
