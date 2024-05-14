@@ -123,7 +123,8 @@ public class Logger
                 }
             } catch( IOException e ) {
                 Log.d( LOGTAG, "Couldn't write file: " + e.getMessage() );
-                Toast.makeText(View.getContext(), "no log??", Toast.LENGTH_LONG).show();
+                //Toast.makeText(View.getContext(), "no log??", Toast.LENGTH_LONG).show();
+                
             }
         }
     }
