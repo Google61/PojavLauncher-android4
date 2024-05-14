@@ -123,13 +123,17 @@ public class Logger
                 }
             } catch( IOException e ) {
                 Log.d( LOGTAG, "Couldn't write file: " + e.getMessage() );
-                Toast.makeText(getActivity(), "no log??", Toast.LENGTH_LONG).show();
+                Toast.makeText(BaseActivity.this, "no log??", Toast.LENGTH_LONG).show();
             }
         }
     }
 
     private static void writeToFile( String tag, String msg, Throwable th ) {
         writeToFile( tag, msg + ", e: " + th.getMessage() );
+    }
+
+    private static void writeToFile( String tag, Throwable th ) {
+        writeToFile( tag, th.getMessage() );
     }
 
 }
