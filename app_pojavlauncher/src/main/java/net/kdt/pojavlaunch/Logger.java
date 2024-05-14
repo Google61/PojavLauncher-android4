@@ -10,7 +10,7 @@ import java.util.Date;
 
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast
+import android.widget.Toast;
 
 public class Logger
 {
