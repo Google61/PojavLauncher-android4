@@ -36,6 +36,71 @@ public class Logger
 
         writeToFile( tag, msg, th );
     }
+    public static void e( String tag, String msg ) {
+        Log.e( tag, msg );
+
+        writeToFile( tag, msg );
+    }
+
+    public static void e( String tag, String msg, Throwable th ) {
+        Log.e( tag, msg, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void i( String tag, String msg ) {
+        Log.i( tag, msg );
+
+        writeToFile( tag, msg );
+    }
+
+    public static void i( String tag, String msg, Throwable th ) {
+        Log.i( tag, msg, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void v( String tag, String msg ) {
+        Log.v( tag, msg );
+
+        writeToFile( tag, msg );
+    }
+
+    public static void v( String tag, String msg, Throwable th ) {
+        Log.v( tag, msg, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void w( String tag, String msg ) {
+        Log.w( tag, msg );
+
+        writeToFile( tag, msg );
+    }
+
+    public static void w( String tag, String msg, Throwable th ) {
+        Log.w( tag, msg, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void w( String tag, Throwable th ) {
+        Log.w( tag, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void wtf( String tag, String msg ) {
+        Log.wtf( tag, msg );
+
+        writeToFile( tag, msg );
+    }
+
+    public static void wtf( String tag, String msg, Throwable th ) {
+        Log.wtf( tag, msg, th );
+
+        writeToFile( tag, msg, th );
+    }
+    public static void wtf( String tag, Throwable th ) {
+        Log.wtf( tag, th );
+
+        writeToFile( tag, msg, th );
+    }
 
     private static void writeToFile( String tag, String msg ) {
 
@@ -56,6 +121,7 @@ public class Logger
                 }
             } catch( IOException e ) {
                 Log.d( LOGTAG, "Couldn't write file: " + e.getMessage() );
+                Toast.makeText(getActivity(), "no log??", Toast.LENGTH_LONG).show();
             }
         }
     }
