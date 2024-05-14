@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.app.Fragment;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
@@ -84,7 +85,7 @@ public class Logger
     public static void w( String tag, Throwable th ) {
         Log.w( tag, th );
 
-        writeToFile( tag, msg, th );
+        writeToFile( tag, th );
     }
     public static void wtf( String tag, String msg ) {
         Log.wtf( tag, msg );
@@ -100,7 +101,7 @@ public class Logger
     public static void wtf( String tag, Throwable th ) {
         Log.wtf( tag, th );
 
-        writeToFile( tag, msg, th );
+        writeToFile( tag, th );
     }
 
     private static void writeToFile( String tag, String msg ) {
