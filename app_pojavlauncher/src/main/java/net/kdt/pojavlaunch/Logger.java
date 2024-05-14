@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import android.app.Fragment;
+import android.view.View;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
@@ -123,7 +123,7 @@ public class Logger
                 }
             } catch( IOException e ) {
                 Log.d( LOGTAG, "Couldn't write file: " + e.getMessage() );
-                Toast.makeText(BaseActivity.this, "no log??", Toast.LENGTH_LONG).show();
+                Toast.makeText(View.getContext(), "no log??", Toast.LENGTH_LONG).show();
             }
         }
     }
