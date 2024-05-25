@@ -2,7 +2,9 @@
 
 Backport to Android 4.4 (4.1?), based on android4 branch  
  
-openjdk backport [here](https://github.com/Google61/openjdk-build-android4)
+openjdk backport [here](https://github.com/Google61/openjdk-build-android)
+
+you may need to copy `.minecraft` folder from actual pojav installation to `/sdcard/games/PojavLauncher` to get this working
 
 todo:
 - debug version list?
